@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moises Carmo - Designer Visual & Produtor de Conteúdo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out 0.6s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-text {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            font-size: 1.05em;
+            line-height: 1.8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-text:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            border-left-width: 8px;
+        }
+
+        .skill-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .experience-item:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+
+        .experience-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+            transform: translateX(5px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .company {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .period {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .responsibilities li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            transition: padding-left 0.3s ease;
+        }
+
+        .responsibilities li:hover {
+            padding-left: 45px;
+        }
+
+        .responsibilities li::before {
+            content: '✦';
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .education-item, .cert-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover, .cert-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .education-title, .cert-title {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.15em;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tool-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .tool-tag:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .differentials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .differential-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .differential-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.1em;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>MOISES FELIPE CONSOLAÇÃO DO CARMO</h1>
+                <div class="subtitle">Designer Visual & Produtor de Conteúdo Digital</div>
+                <div class="contact-info">
+                    <div class="contact-item">📧 Moifel@gmail.com</div>
+                    <div class="contact-item">📱 (11) 99863-7823</div>
+                    <div class="contact-item">🚗 CNH B</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">💡 SOBRE MIM</h2>
+                <div class="about-text">
+                    Designer multidisciplinar com forte atuação em produção audiovisual, branding e estratégias digitais. 
+                    Combino expertise técnica em desenvolvimento web com sensibilidade estética para criar experiências visuais 
+                    impactantes. Especializado em transformar conceitos em narrativas visuais que conectam marcas com seu público 
+                    através de conteúdo autêntico e engajador.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">🎯 COMPETÊNCIAS PRINCIPAIS</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>Design & Criação</h4>
+                        <ul class="skill-list">
+                            <li>Identidade Visual & Branding</li>
+                            <li>Design Editorial</li>
+                            <li>Motion Design</li>
+                            <li>UI/UX Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Produção Audiovisual</h4>
+                        <ul class="skill-list">
+                            <li>Fotografia Profissional</li>
+                            <li>Vídeo Marketing</li>
+                            <li>Edição Avançada</li>
+                            <li>Direção de Arte</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Tecnologia & IA</h4>
+                        <ul class="skill-list">
+                            <li>Midjourney AI & IA Generativa</li>
+                            <li>Web Design & E-commerce</li>
+                            <li>Marketing Digital & SEO</li>
+                            <li>Performance de Conteúdo</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">💼 EXPERIÊNCIA PROFISSIONAL</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Produtor Audiovisual & Designer de Conteúdo</div>
+                            <div class="company">SelfCare Makeup | PJ</div>
+                        </div>
+                        <div class="period">Ago/2025 - Atual</div>
+                    </div>
+                    <p style="margin: 15px 0; color: #555;">
+                        Responsável pela direção criativa e produção de todo conteúdo visual da marca
+                    </p>
+                    <ul class="responsibilities">
+                        <li>Produção audiovisual completa: operação de câmeras profissionais (DSLR/mirrorless), direção de fotografia e captação de áudio</li>
+                        <li>Direção de arte: iluminação profissional (softbox, LEDs), ambientação de cena para estúdio e externa</li>
+                        <li>Pós-produção: edição, finalização e otimização de vídeos para YouTube, Instagram e TikTok</li>
+                        <li>Branding: desenvolvimento e manutenção da identidade visual da empresa em todas as plataformas</li>
+                        <li>Performance: análise e otimização de conteúdo para maximizar engajamento e conversão</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Analista de Suporte Tecnológico</div>
+                            <div class="company">Cepêra Indústria Alimentícia</div>
+                        </div>
+                        <div class="period">Fev/2023 - Ago/2025</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Administração de Active Directory e gestão de acessos</li>
+                        <li>Implementação de políticas de segurança com Bitdefender</li>
+                        <li>Configuração de VPN Fortinet e gestão de servidores</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">🎓 FORMAÇÃO ACADÊMICA</h2>
+                <div class="education-item">
+                    <div class="education-title">Pós-Graduação em Gestão Estratégica de Marketing e Vendas</div>
+                    <div style="color: #666; margin-top: 5px;">Em andamento</div>
+                </div>
+                <div class="education-item">
+                    <div class="education-title">Análise e Desenvolvimento de Sistemas</div>
+                    <div style="color: #666; margin-top: 5px;">Universidade Cidade de São Paulo | Concluído em 2024</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">📚 CERTIFICAÇÕES</h2>
+                <div class="cert-item">
+                    <div class="cert-title">🏆 Pré-MBA em Marketing, Branding e Performance</div>
+                    <div style="color: #666; margin-top: 5px;">2025</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">📈 Aceleração de Vendas 2.0</div>
+                    <div style="color: #666; margin-top: 5px;">G4 Educação | 2024</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">💻 Microsoft MS-102: Microsoft 365 Administrator</div>
+                    <div style="color: #666; margin-top: 5px;">Microsoft | 2024</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">🛠️ FERRAMENTAS & SOFTWARE</h2>
+                <div class="tools-grid">
+                    <div class="tool-tag">Canva Pro</div>
+                    <div class="tool-tag">Lightroom</div>
+                    <div class="tool-tag">Photoshop</div>
+                    <div class="tool-tag">Edição de Vídeo</div>
+                    <div class="tool-tag">Midjourney AI</div>
+                    <div class="tool-tag">Web Design</div>
+                    <div class="tool-tag">E-commerce</div>
+                    <div class="tool-tag">Microsoft 365</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">🌟 DIFERENCIAIS</h2>
+                <div class="differentials">
+                    <div class="differential-item">✨ Visão 360° de comunicação visual</div>
+                    <div class="differential-item">✨ Experiência com marcas reais</div>
+                    <div class="differential-item">✨ Domínio técnico + criativo</div>
+                    <div class="differential-item">✨ Atualizado com IA e tendências</div>
+                    <div class="differential-item">✨ Entrega sob pressão</div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p><em>"Design não é apenas como algo parece. Design é como algo funciona."</em></p>
+            <p style="margin-top: 20px; font-size: 1.2em;">Disponível para projetos </p>
+            <a href="mailto:Moifel@gmail.com" class="cta-button">Entre em contato</a>
+        </footer>
+    </div>
+
+    <script>
+        // Indicador de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            const windowHeight = window.innerHeight;
+            const fullHeight = document.documentElement.scrollHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / (fullHeight - windowHeight)) * 100;
+            scrollIndicator.style.width = progress + '%';
+        });
+
+        // Animação suave ao rolar
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
