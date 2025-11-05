@@ -1,394 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moisés Felipe Consolação do Carmo - Profissional </title>
-  <style>
-    :root {
-      --gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-      --gradient-hover: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
-      --bg: #f8f9fc;
-      --text: #1e293b;
-      --accent: #6d28d9;
-      --card-bg: rgba(255, 255, 255, 0.75);
-      --blur: 18px;
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --transition: 0.3s ease;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferenciais Competitivos - Moisés Carmo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background-color: #f9f9ff;
+            color: #4a4a6a;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 10px;
+        }
 
-    body {
-      font-family: 'Poppins', 'Segoe UI', sans-serif;
-      color: var(--text);
-      background: var(--gradient);
-      background-attachment: fixed;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-      animation: gradientMove 10s ease infinite alternate;
-    }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+        }
 
-    @keyframes gradientMove {
-      from { background-position: left top; }
-      to { background-position: right bottom; }
-    }
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #6476f3;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .container {
-      width: 100%;
-      max-width: 950px;
-      background: var(--card-bg);
-      backdrop-filter: blur(var(--blur));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      animation: fadeIn 1s ease;
-    }
+        h2::before {
+            content: "☀️";
+            font-size: 1.8rem;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        hr {
+            border: none;
+            border-top: 3px solid #6476f3;
+            width: 90%;
+            margin: 0 auto 40px;
+        }
 
-    /* ===== HEADER ===== */
-    .header {
-      background: var(--gradient);
-      color: #fff;
-      text-align: center;
-      padding: 70px 40px 60px;
-      position: relative;
-      overflow: hidden;
-    }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-    .header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 60%);
-    }
+        .card {
+            background-color: #f4f2ff;
+            border-top: 5px solid #8b8bff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(120, 120, 200, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .header h1 {
-      font-size: 2.8em;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(100, 100, 200, 0.25);
+        }
 
-    .subtitle {
-      font-size: 1.2em;
-      margin-top: 10px;
-      opacity: 0.95;
-    }
+        .card span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
 
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-      font-size: 0.95em;
-    }
+        .card h3 {
+            font-size: 1.2rem;
+            color: #6a4fcf;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-    .contact-info span {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 8px 20px;
-      border-radius: 30px;
-      backdrop-filter: blur(6px);
-      transition: var(--transition);
-    }
+        .card p {
+            font-size: 0.95rem;
+            color: #4a4a6a;
+        }
 
-    .contact-info span:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .tagline {
-      font-style: italic;
-      margin-top: 20px;
-      font-size: 1em;
-      opacity: 0.9;
-    }
-
-    /* ===== CONTENT ===== */
-    .content {
-      padding: 55px;
-    }
-
-    .section {
-      margin-bottom: 45px;
-      transition: var(--transition);
-    }
-
-    .section:hover {
-      transform: translateY(-2px);
-    }
-
-    .section-title {
-      font-size: 1.6em;
-      color: var(--accent);
-      margin-bottom: 22px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .section-title::before {
-      content: "";
-      width: 8px;
-      height: 25px;
-      border-radius: 4px;
-      background: var(--gradient);
-    }
-
-    /* ===== ABOUT ===== */
-    .about-box {
-      background: rgba(99, 102, 241, 0.08);
-      border-left: 4px solid var(--accent);
-      padding: 25px 28px;
-      border-radius: var(--radius);
-      font-size: 1.05em;
-      line-height: 1.8;
-    }
-
-    /* ===== EXPERIENCE ===== */
-    .experience-item {
-      background: rgba(255,255,255,0.85);
-      padding: 25px 28px;
-      border-radius: var(--radius);
-      border-left: 5px solid var(--accent);
-      margin-bottom: 25px;
-      transition: var(--transition);
-    }
-
-    .experience-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    }
-
-    .experience-item h3 {
-      color: var(--accent);
-      font-size: 1.25em;
-      margin-bottom: 6px;
-    }
-
-    .company {
-      color: #6366f1;
-      font-weight: 600;
-      font-size: 1.05em;
-    }
-
-    .period {
-      color: #666;
-      font-size: 0.9em;
-      margin-bottom: 15px;
-    }
-
-    .experience-item li {
-      margin-bottom: 6px;
-      line-height: 1.6;
-    }
-
-    /* ===== SKILLS ===== */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-category {
-      background: rgba(255,255,255,0.9);
-      padding: 20px;
-      border-radius: var(--radius);
-      border-left: 4px solid #6366f1;
-      transition: var(--transition);
-    }
-
-    .skill-category:hover {
-      transform: scale(1.02);
-      background: rgba(255,255,255,1);
-    }
-
-    .skill-category h3 {
-      color: var(--accent);
-      margin-bottom: 12px;
-      font-size: 1.1em;
-    }
-
-    /* ===== EDUCATION ===== */
-    .education-item, .cert-item {
-      background: rgba(255,255,255,0.9);
-      padding: 20px;
-      border-radius: var(--radius);
-      margin-bottom: 15px;
-      border-left: 4px solid var(--accent);
-    }
-
-    .cert-item strong {
-      color: var(--accent);
-    }
-
-    /* ===== TOOLS ===== */
-    .tools-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .tool-tag {
-      background: var(--gradient);
-      color: #fff;
-      padding: 8px 18px;
-      border-radius: 25px;
-      font-size: 0.9em;
-      transition: var(--transition);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .tool-tag:hover {
-      transform: translateY(-3px);
-      background: var(--gradient-hover);
-    }
-
-    /* ===== QUOTE ===== */
-    .quote {
-      text-align: center;
-      font-style: italic;
-      font-size: 1.1em;
-      color: #6366f1;
-      padding: 25px;
-      border-top: 1px solid #e5e7eb;
-      border-bottom: 1px solid #e5e7eb;
-      background: rgba(255,255,255,0.5);
-      border-radius: var(--radius);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .content { padding: 30px 25px; }
-      .header h1 { font-size: 2em; }
-      .section-title { font-size: 1.3em; }
-      .skills-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>MOISÉS FELIPE CONSOLAÇÃO DO CARMO</h1>
-      <div class="subtitle">Especialista em Marketing Digital & Endomarketing</div>
-      <div class="contact-info">
-        <span>📧 moifel@gmail.com</span>
-        <span>📱 (11) 99863-7823</span>
-        <span>🚗 CNH B</span>
-      </div>
-      <div class="tagline">Marketing Estratégico | Endomarketing | Produção Visual & Digital</div>
+    <div class="container">
+        <h2>DIFERENCIAIS COMPETITIVOS</h2>
+        <hr>
+        <div class="cards">
+            <div class="card">
+                <span>🎯</span>
+                <h3>Visão 360º</h3>
+                <p>Execução completa de projetos, do conceito estratégico à implementação técnica.</p>
+            </div>
+
+            <div class="card">
+                <span>💡</span>
+                <h3>Criatividade + Dados</h3>
+                <p>Decisões criativas baseadas em performance e métricas reais.</p>
+            </div>
+
+            <div class="card">
+                <span>🚀</span>
+                <h3>Autonomia Técnica</h3>
+                <p>Produção in-house completa sem dependência de terceiros.</p>
+            </div>
+
+            <div class="card">
+                <span>🔁</span>
+                <h3>Agilidade</h3>
+                <p>Capacidade de trabalhar sob pressão e cumprir prazos apertados.</p>
+            </div>
+
+            <div class="card">
+                <span>🤖</span>
+                <h3>Inovação com IA</h3>
+                <p>Uso estratégico de IA generativa para aceleração criativa.</p>
+            </div>
+
+            <div class="card">
+                <span>👨‍👩‍👧‍👦</span>
+                <h3>Valores Sólidos</h3>
+                <p>Profissional comprometido com crescimento e valores familiares.</p>
+            </div>
+        </div>
     </div>
-
-    <div class="content">
-      <div class="section">
-        <h2 class="section-title">💡 Sobre Mim</h2>
-        <div class="about-box">
-          <p><strong>31 anos, casado e pai da Sophia.</strong></p>
-          <p>Profissional com ampla vivência em <strong>Marketing Digital, Comunicação Interna e Endomarketing</strong>, unindo criatividade e estratégia para gerar conexões reais entre marca, colaboradores e público externo.</p>
-          <p>Atuo na criação de campanhas integradas que fortalecem a cultura organizacional, aumentam o engajamento interno e potencializam o posicionamento da marca no mercado.</p>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">💼 Experiência Profissional</h2>
-
-        <div class="experience-item">
-          <h3>Produtor Audiovisual & Especialista em Branding</h3>
-          <div class="company">SelfCare Makeup</div>
-          <div class="period">2024 - Atual</div>
-          <ul>
-            <li>Criação de identidade visual e estratégia de marca voltada ao público jovem e ao conceito de autocuidado.</li>
-            <li>Produção de conteúdo para redes sociais e campanhas com foco em humanização e relacionamento.</li>
-            <li>Criação de ações de <strong>endomarketing visual</strong> que fortalecem a cultura da marca junto a parceiros e colaboradoras.</li>
-            <li>Desenvolvimento do e-commerce e materiais digitais com foco em experiência do usuário e conversão.</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <h3>Analista de Suporte & Endomarketing Interno</h3>
-          <div class="company">Cepêra Indústria Alimentícia</div>
-          <div class="period">2023 - 2025</div>
-          <ul>
-            <li>Atuação estratégica em campanhas internas de endomarketing, conectando tecnologia e comunicação corporativa.</li>
-            <li>Suporte técnico e criativo às áreas de Comunicação Interna e RH em campanhas digitais e eventos.</li>
-            <li>Treinamento de colaboradores em ferramentas digitais, ampliando engajamento e eficiência comunicacional.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">🎯 Competências-Chave</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Marketing & Estratégia</h3>
-            <ul>
-              <li>Endomarketing e Comunicação Interna</li>
-              <li>Branding & Posicionamento</li>
-              <li>Campanhas Integradas</li>
-              <li>Gestão de Mídias Sociais</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Conteúdo & Design</h3>
-            <ul>
-              <li>Produção Audiovisual</li>
-              <li>Fotografia de Produtos</li>
-              <li>Web Design</li>
-              <li>UX/UI</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Tecnologia & Performance</h3>
-            <ul>
-              <li>Google Analytics</li>
-              <li>SEO & Automação</li>
-              <li>Microsoft 365</li>
-              <li>WordPress & E-commerce</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">🎓 Formação</h2>
-        <div class="education-item">
-          <h3>Pós-Graduação em Marketing e Vendas</h3>
-          <p>Instituição de Ensino Superior — Em andamento (2025)</p>
-        </div>
-        <div class="education-item">
-          <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
-          <p>Universidade Cidade de São Paulo — Concluído (2024)</p>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">🛠️ Ferramentas</h2>
-        <div class="tools-cloud">
-          <span class="tool-tag">Canva Pro</span>
-          <span class="tool-tag">Adobe Lightroom</span>
-          <span class="tool-tag">WordPress</span>
-          <span class="tool-tag">E-commerce</span>
-          <span class="tool-tag">Google Analytics</span>
-          <span class="tool-tag">Microsoft 365</span>
-          <span class="tool-tag">Social Media</span>
-        </div>
-      </div>
-
-      <div class="quote">“O marketing interno é o primeiro passo para inspirar o cliente externo.”</div>
-    </div>
-  </div>
 </body>
 </html>
-
