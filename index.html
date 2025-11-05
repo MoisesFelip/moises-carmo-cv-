@@ -1,143 +1,309 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diferenciais Competitivos - Moisés Carmo</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moisés Felipe Consolação do Carmo - Marketing Digital & Endomarketing</title>
+<style>
+:root {
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-light: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  --bg: #f4f5fb;
+  --text: #2c3e50;
+  --accent: #764ba2;
+  --card-bg: rgba(255,255,255,0.9);
+  --blur: 15px;
+}
 
-        body {
-            font-family: "Poppins", Arial, sans-serif;
-            background-color: #f9f9ff;
-            color: #4a4a6a;
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 10px;
-        }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        .container {
-            max-width: 1100px;
-            width: 100%;
-        }
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--gradient);
+  background-attachment: fixed;
+  padding: 30px;
+}
 
-        h2 {
-            text-align: center;
-            font-size: 2rem;
-            color: #6476f3;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
+/* Container principal */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: var(--card-bg);
+  border-radius: 25px;
+  backdrop-filter: blur(var(--blur));
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+}
 
-        h2::before {
-            content: "☀️";
-            font-size: 1.8rem;
-        }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-        hr {
-            border: none;
-            border-top: 3px solid #6476f3;
-            width: 90%;
-            margin: 0 auto 40px;
-        }
+/* Cabeçalho */
+.header {
+  background: var(--gradient);
+  color: #fff;
+  text-align: center;
+  padding: 60px 40px;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+.header h1 {
+  font-size: 2.6em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-        .card {
-            background-color: #f4f2ff;
-            border-top: 5px solid #8b8bff;
-            border-radius: 16px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(120, 120, 200, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.subtitle {
+  font-size: 1.2em;
+  margin-top: 10px;
+  opacity: 0.95;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(100, 100, 200, 0.25);
-        }
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  font-size: 0.95em;
+}
 
-        .card span {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 10px;
-        }
+.contact-info span {
+  background: rgba(255,255,255,0.15);
+  padding: 8px 18px;
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+}
 
-        .card h3 {
-            font-size: 1.2rem;
-            color: #6a4fcf;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+.tagline {
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 1em;
+  opacity: 0.9;
+}
 
-        .card p {
-            font-size: 0.95rem;
-            color: #4a4a6a;
-        }
+/* Conteúdo */
+.content {
+  padding: 45px;
+}
 
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+.section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.6em;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.section-title::before {
+  content: "◆";
+  color: #667eea;
+  font-size: 0.9em;
+}
+
+/* Sobre mim */
+.about-box {
+  background: rgba(102,126,234,0.1);
+  border-left: 4px solid #667eea;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1.05em;
+  line-height: 1.8;
+}
+
+/* Experiência */
+.experience-item {
+  background: rgba(255,255,255,0.8);
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 5px solid #764ba2;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.experience-item h3 {
+  color: var(--accent);
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+.company {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+.period {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.experience-item li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* Competências */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  background: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  transition: 0.3s;
+}
+
+.skill-category:hover {
+  background: rgba(255,255,255,1);
+  transform: translateY(-3px);
+}
+
+.skill-category h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* Formação */
+.education-item {
+  background: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #667eea;
+}
+
+/* Ferramentas */
+.tools-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-tag {
+  background: var(--gradient-light);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: transform 0.2s;
+}
+
+.tool-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Citação */
+.quote {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1em;
+  color: #667eea;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+/* DIFERENCIAIS COMPETITIVOS */
+.diferenciais {
+  text-align: center;
+}
+
+.diferenciais h2 {
+  font-size: 1.8em;
+  color: #5b67e9;
+  font-weight: 700;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.dif-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 25px 20px;
+  transition: transform .3s;
+  border-top: 4px solid #818cf8;
+}
+
+.dif-card:hover {
+  transform: translateY(-6px);
+}
+
+.dif-card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.dif-card h3 {
+  color: #633bbc;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.dif-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body { padding: 15px; }
+  .header h1 { font-size: 1.8em; }
+  .subtitle { font-size: 1em; }
+  .content { padding: 25px; }
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>DIFERENCIAIS COMPETITIVOS</h2>
-        <hr>
-        <div class="cards">
-            <div class="card">
-                <span>🎯</span>
-                <h3>Visão 360º</h3>
-                <p>Execução completa de projetos, do conceito estratégico à implementação técnica.</p>
-            </div>
-
-            <div class="card">
-                <span>💡</span>
-                <h3>Criatividade + Dados</h3>
-                <p>Decisões criativas baseadas em performance e métricas reais.</p>
-            </div>
-
-            <div class="card">
-                <span>🚀</span>
-                <h3>Autonomia Técnica</h3>
-                <p>Produção in-house completa sem dependência de terceiros.</p>
-            </div>
-
-            <div class="card">
-                <span>🔁</span>
-                <h3>Agilidade</h3>
-                <p>Capacidade de trabalhar sob pressão e cumprir prazos apertados.</p>
-            </div>
-
-            <div class="card">
-                <span>🤖</span>
-                <h3>Inovação com IA</h3>
-                <p>Uso estratégico de IA generativa para aceleração criativa.</p>
-            </div>
-
-            <div class="card">
-                <span>👨‍👩‍👧‍👦</span>
-                <h3>Valores Sólidos</h3>
-                <p>Profissional comprometido com crescimento e valores familiares.</p>
-            </div>
-        </div>
+<div class="container">
+  <div class="header">
+    <h1>MOISÉS FELIPE CONSOLAÇÃO DO CARMO</h1>
+    <div class="subtitle">Especialista em Marketing Digital & Endomarketing</div>
+    <div class="contact-info">
+      <span>📧 moifel@gmail.com</span>
+      <span>📱 (11) 99863-7823</span>
+      <span>🚗 CNH B</span>
     </div>
-</body>
-</html>
+    <div class="tagline">Marketing Estratégico | Endomarketing | Produção Visual & Digital</div>
+  </div>
+
+  <div class="content">
+    <div class="section">
+      <h2 class="section-title">💡 Sobre Mim</h2>
+      <div class="about-box">
+        <p><strong>31 anos, casado e pai da
