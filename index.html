@@ -3,307 +3,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moisés Felipe Consolação do Carmo - Marketing Digital & Endomarketing</title>
+<title>Moisés Fleipe Carmo - CV Profissional</title>
 <style>
 :root {
-  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-light: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
-  --bg: #f4f5fb;
-  --text: #2c3e50;
-  --accent: #764ba2;
-  --card-bg: rgba(255,255,255,0.9);
-  --blur: 15px;
+  --gradient: linear-gradient(135deg,#6366f1 0%,#a855f7 100%);
+  --gradient-hover: linear-gradient(135deg,#7c3aed 0%,#9333ea 100%);
+  --accent: #6d28d9;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 16px;
+  --shadow: 0 6px 25px rgba(0,0,0,0.1);
+  --bg: #f4f6fb;
 }
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: var(--bg);
   color: var(--text);
-  background: var(--gradient);
-  background-attachment: fixed;
-  padding: 30px;
-}
-
-/* Container principal */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  background: var(--card-bg);
-  border-radius: 25px;
-  backdrop-filter: blur(var(--blur));
-  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-  overflow: hidden;
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Cabeçalho */
-.header {
-  background: var(--gradient);
-  color: #fff;
-  text-align: center;
-  padding: 60px 40px;
-}
-
-.header h1 {
-  font-size: 2.6em;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-size: 1.2em;
-  margin-top: 10px;
-  opacity: 0.95;
-}
-
-.contact-info {
+  padding: 20px;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 15px;
-  font-size: 0.95em;
 }
-
+.container {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 1000px;
+  width: 100%;
+  overflow: hidden;
+}
+header {
+  background: var(--gradient);
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+header p {
+  font-size: 1.1rem;
+  margin-top: 6px;
+  opacity: .9;
+}
+.contact-info {
+  margin-top: 15px;
+  font-size: .95rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
 .contact-info span {
   background: rgba(255,255,255,0.15);
-  padding: 8px 18px;
-  border-radius: 25px;
-  backdrop-filter: blur(5px);
+  padding: 6px 12px;
+  border-radius: 50px;
 }
 
-.tagline {
-  font-style: italic;
-  margin-top: 20px;
-  font-size: 1em;
-  opacity: 0.9;
-}
-
-/* Conteúdo */
-.content {
-  padding: 45px;
-}
-
-.section {
-  margin-bottom: 40px;
-}
-
-.section-title {
-  font-size: 1.6em;
-  color: var(--accent);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-}
-
-.section-title::before {
-  content: "◆";
-  color: #667eea;
-  font-size: 0.9em;
-}
-
-/* Sobre mim */
-.about-box {
-  background: rgba(102,126,234,0.1);
-  border-left: 4px solid #667eea;
-  padding: 25px;
-  border-radius: 15px;
-  font-size: 1.05em;
-  line-height: 1.8;
-}
-
-/* Experiência */
-.experience-item {
-  background: rgba(255,255,255,0.8);
-  padding: 25px;
-  border-radius: 15px;
-  border-left: 5px solid #764ba2;
-  margin-bottom: 25px;
-  transition: transform 0.3s ease;
-}
-
-.experience-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.experience-item h3 {
-  color: var(--accent);
-  font-size: 1.3em;
-  margin-bottom: 5px;
-}
-
-.company {
-  color: #667eea;
-  font-weight: 600;
-  font-size: 1.05em;
-}
-
-.period {
-  color: #666;
-  font-size: 0.9em;
-  margin-bottom: 15px;
-}
-
-.experience-item li {
-  margin-bottom: 6px;
-  line-height: 1.6;
-}
-
-/* Competências */
-.skills-grid {
+main {
+  padding: 40px 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
 }
-
-.skill-category {
-  background: rgba(255,255,255,0.85);
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 4px solid #667eea;
-  transition: 0.3s;
+.section {
+  margin-bottom: 25px;
 }
-
-.skill-category:hover {
-  background: rgba(255,255,255,1);
-  transform: translateY(-3px);
-}
-
-.skill-category h3 {
+.section h2 {
+  font-size: 1.3rem;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  border-left: 5px solid var(--accent);
+  padding-left: 10px;
 }
-
-/* Formação */
-.education-item {
-  background: rgba(255,255,255,0.85);
-  padding: 20px;
+.about-box {
+  background: rgba(99,102,241,0.05);
+  border-left: 4px solid #818cf8;
+  padding: 15px;
   border-radius: 10px;
-  margin-bottom: 15px;
-  border-left: 4px solid #667eea;
+  line-height: 1.7;
 }
+.experience-item {
+  background: rgba(99,102,241,0.05);
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-left: 4px solid var(--accent);
+}
+.experience-item h3 { color: var(--accent); font-size: 1.05rem; margin-bottom: 4px; }
+.experience-item p { font-size: .95rem; color: var(--muted); }
 
-/* Ferramentas */
-.tools-cloud {
+.skills, .tools {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+}
+.skill, .tool {
+  background: rgba(168,85,247,0.08);
+  color: var(--accent);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: .9rem;
 }
 
-.tool-tag {
-  background: var(--gradient-light);
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9em;
-  transition: transform 0.2s;
-}
-
-.tool-tag:hover {
-  transform: scale(1.05);
-}
-
-/* Citação */
 .quote {
-  text-align: center;
-  font-style: italic;
-  font-size: 1.1em;
-  color: #667eea;
+  background: var(--gradient);
+  color: #fff;
+  border-radius: 12px;
   padding: 20px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  font-style: italic;
+  text-align: center;
 }
 
 /* DIFERENCIAIS COMPETITIVOS */
 .diferenciais {
+  margin-top: 40px;
   text-align: center;
 }
-
 .diferenciais h2 {
-  font-size: 1.8em;
-  color: #5b67e9;
+  font-size: 1.6rem;
+  color: var(--accent);
   font-weight: 700;
-  margin-bottom: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 5px;
 }
-
-.dif-grid {
+.cards {
+  margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
   gap: 20px;
 }
-
-.dif-card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+.card {
+  background: #fafafa;
+  border-radius: 14px;
   padding: 25px 20px;
-  transition: transform .3s;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease;
   border-top: 4px solid #818cf8;
 }
-
-.dif-card:hover {
-  transform: translateY(-6px);
-}
-
-.dif-card .icon {
+.card:hover { transform: translateY(-5px); }
+.card span {
   font-size: 2rem;
+  display: block;
   margin-bottom: 10px;
 }
-
-.dif-card h3 {
-  color: #633bbc;
-  font-weight: 700;
-  margin-bottom: 10px;
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.card p {
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.5;
 }
 
-.dif-card p {
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  body { padding: 15px; }
-  .header h1 { font-size: 1.8em; }
-  .subtitle { font-size: 1em; }
-  .content { padding: 25px; }
+/* RESPONSIVIDADE */
+@media(max-width: 768px){
+  main { grid-template-columns: 1fr; padding: 25px; }
+  header h1 { font-size: 1.8rem; }
+  .cards { grid-template-columns: 1fr; }
 }
 </style>
 </head>
-
 <body>
 <div class="container">
-  <div class="header">
-    <h1>MOISÉS FELIPE CONSOLAÇÃO DO CARMO</h1>
-    <div class="subtitle">Especialista em Marketing Digital & Endomarketing</div>
+  <header>
+    <h1>Moisés Fleipe Carmo</h1>
+    <p>Profissional de Marketing Digital, TI & Endomarketing</p>
     <div class="contact-info">
-      <span>📧 moifel@gmail.com</span>
-      <span>📱 (11) 99863-7823</span>
-      <span>🚗 CNH B</span>
+      <span>📧 moisescarmo@gmail.com</span>
+      <span>🌐 moisescarmo.com.br</span>
+      <span>📍 São Paulo - SP</span>
     </div>
-    <div class="tagline">Marketing Estratégico | Endomarketing | Produção Visual & Digital</div>
-  </div>
+  </header>
 
-  <div class="content">
-    <div class="section">
-      <h2 class="section-title">💡 Sobre Mim</h2>
+  <main>
+    <section class="section main">
+      <h2>Sobre Mim</h2>
       <div class="about-box">
-        <p><strong>31 anos, casado e pai da
+        Profissional com experiência em marketing digital, tecnologia da informação e produção de conteúdo visual. Atuo com estratégias de comunicação, identidade de marca e gestão de projetos que conectam criatividade e tecnologia.
+      </div>
+
+      <h2>Experiência</h2>
+      <div class="experience-item">
+        <h3>Analista de TI – Cepêra (2023 - atual)</h3>
+        <p>Gestão de endpoints, segurança da informação, configuração de VPNs e suporte técnico.</p>
+      </div>
+      <div class="experience-item">
+        <h3>Produtor de Conteúdo & Marketing</h3>
+        <p>Criação de materiais digitais, campanhas visuais e estratégias de endomarketing com foco em engajamento.</p>
+      </div>
+
+      <h2>Competências</h2>
+      <div class="skills">
+        <div class="skill">Gestão de Projetos</div>
+        <div class="skill">Endomarketing</div>
+        <div class="skill">Design Visual</div>
+        <div class="skill">Redes Sociais</div>
+        <div class="skill">WordPress</div>
+        <div class="skill">SEO & Estratégia Digital</div>
+      </div>
+
+      <h2>Formação</h2>
+      <p>🎓 Análise e Desenvolvimento de Sistemas – Universidade Cruzeiro do Sul</p>
+
+      <h2>Ferramentas</h2>
+      <div class="tools">
+        <div class="tool">Photoshop</div>
+        <div class="tool">Illustrator</div>
+        <div class="tool">Premiere</div>
+        <div class="tool">Canva</div>
+        <div class="tool">Google Ads</div>
+        <div class="tool">WordPress</div>
+      </div>
+
+      <div class="quote">
+        "Criatividade é inteligência se divertindo." — Albert Einstein
+      </div>
+
+      <section class="diferenciais">
+        <h2>💡 DIFERENCIAIS COMPETITIVOS</h2>
+        <div class="cards">
+          <div class="card">
+            <span>🎯</span>
+            <h3>Visão 360º</h3>
+            <p>Execução completa de projetos, do conceito estratégico à implementação técnica.</p>
+          </div>
+          <div class="card">
+            <span>💡</span>
+            <h3>Criatividade + Dados</h3>
+            <p>Decisões criativas baseadas em performance e métricas reais.</p>
+          </div>
+          <div class="card">
+            <span>🚀</span>
+            <h3>Autonomia Técnica</h3>
+            <p>Produção in-house completa sem dependência de terceiros.</p>
+          </div>
+          <div class="card">
+            <span>🔄</span>
+            <h3>Agilidade</h3>
+            <p>Capacidade de trabalhar sob pressão e cumprir prazos apertados.</p>
+          </div>
+          <div class="card">
+            <span>🤖</span>
+            <h3>Inovação com IA</h3>
+            <p>Uso estratégico de IA generativa para aceleração criativa.</p>
+          </div>
+          <div class="card">
+            <span>👨‍👩‍👧‍👦</span>
+            <h3>Valores Sólidos</h3>
+            <p>Profissional comprometido com crescimento e valores familiares.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+</body>
+</html>
